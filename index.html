@@ -2614,14 +2614,17 @@
             let res = null;
             for (let intento = 0; intento < 3; intento++) {
               try {
-                res = await fetch("https://formspree.io/f/mbgjawqw", {
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                    Accept: "application/json",
+                res = await fetch(
+                  "https://formspree.io/f/mbgjawqw",
+                  {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                      Accept: "application/json",
+                    },
+                    body: fsBody,
                   },
-                  body: fsBody,
-                });
+                );
                 if (res.ok) break;
               } catch (_) {
                 res = null;
